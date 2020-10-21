@@ -11,12 +11,13 @@
         </thead>
         <tbody>
             <tr *ngFor="let country of countries"> 
-                <th scope="row">1</th>
+                <th scope="row">{{country.alpha3Code}}</th>
                 <td>{{country.name}}</td>
                 <td>{{country.region}}</td>
                 <td>{{country.subregion}}</td>
                 <td>
-                    <button class="btn btn-primary">Detail</button>
+                    <!-- <button class="btn btn-primary" (click)="onSelectCountry(country)">View</button> -->
+                    <a routerLink="/detail/{{country.alpha3Code}}">Detail</a>
                 </td>
             </tr>
         </tbody>

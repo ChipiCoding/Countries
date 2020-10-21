@@ -8,12 +8,16 @@ import { Observable } from 'rxjs';
 })
 export class CountryService {
 
-  countries : Observable<Country[]>; 
-  url: string = 'https://restcountries.eu/rest/v2/all';
+  url: string = 'https://restcountries.eu/rest/v2/';
+
   error;
   constructor(private http: HttpClient) { }
 
   getCountries(): Observable<Country[]> {     
-    return this.http.get<Country[]>(this.url);
+    return this.http.get<Country[]>(this.url + 'all/');
+  }
+
+  getCountry(name: string): Observable<Country> {     
+    return this.http.get<Country>(this.url + 'alpha/' + name);
   }
 }

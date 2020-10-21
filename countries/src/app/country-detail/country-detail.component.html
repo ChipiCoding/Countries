@@ -1,1 +1,21 @@
-<p>country-detail works!</p>
+<div class="container" *ngIf="country">
+    <label>{{country.alpha3Code}}</label>
+    <div>
+        <label>Name</label>
+        <input type="text" class="form-control" aria-describedby="emailHelp" value="{{country.name}}">
+    </div>
+    
+    <div>
+        <label>Region</label>
+        <input type="text" class="form-control" aria-describedby="emailHelp" value="{{country.region}}">
+    </div>
+    
+    <div>
+        <label>Subregion</label>
+        <input type="text" class="form-control" aria-describedby="emailHelp" value="{{country.subregion}}">
+        </div>
+
+    <button type="button" class="btn btn-primary">Save</button>
+    <button type="button" class="btn btn-secondary" (click)="goBack()">Back</button>
+        
+</div>
